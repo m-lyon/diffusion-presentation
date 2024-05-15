@@ -1,0 +1,50 @@
+\documentclass[14pt,aspectratio=169]{beamer}
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{animate}
+\usepackage{bm}
+\usepackage{multimedia}
+\usepackage{acro}
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\title{Understanding Diffusion Models: A Unified Perspective}
+
+\author{Calvin Luo}
+
+\institute[shortinst]{Google Research}
+
+\setbeamertemplate{endpage}{
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=2em]{headline}
+        \begin{minipage}{\textwidth}
+            \centering
+            \vskip4em plus 1filll
+                {\usebeamerfont{title page title}\usebeamercolor[bg]{title page}Fin.\\[1.5ex]}
+        \end{minipage}
+        \vskip2em
+    \end{beamercolorbox}
+    \centering
+    \vskip0pt plus 1filll
+}
+
+\input{acronyms}
+
+\begin{document}
+
+{
+\setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+\begin{frame}
+    \titlepage
+\end{frame}
+}
+
+\input{slides/generative_models.tex}
+
+\AtEndDocument{\usebeamertemplate{endpage}}
+
+\end{document}
