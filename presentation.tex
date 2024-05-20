@@ -9,16 +9,20 @@
 \usepackage{bm}
 \usepackage{multimedia}
 \usepackage{acro}
+\usepackage{enumitem}
 
 \usetheme{auriga}
 \usecolortheme{auriga}
+
+
+% \setbeamertemplate{blocks}[rounded][shadow]
 
 \title{Understanding Diffusion Models: A Unified Perspective}
 
 \author{Calvin Luo}
 
 \institute[shortinst]{Google Research}
-
+\setbeamercovered{invisible}
 \setbeamertemplate{endpage}{
     \begin{beamercolorbox}[wd=\paperwidth,leftskip=2em]{headline}
         \begin{minipage}{\textwidth}
@@ -32,6 +36,8 @@
     \vskip0pt plus 1filll
 }
 
+\setitemize{label=\scriptsize$\bullet$}
+
 \input{acronyms}
 
 \begin{document}
@@ -43,7 +49,16 @@
 \end{frame}
 }
 
+\newcommand{\vx}{\boldsymbol{x}}
+\newcommand{\vz}{\boldsymbol{z}}
+
 \input{slides/generative_models.tex}
+\input{slides/elbo1.tex}
+\input{slides/elbo2.tex}
+\input{slides/vae1.tex}
+\input{slides/vae2.tex}
+\input{slides/vae3.tex}
+\input{slides/hvae.tex}
 
 \AtEndDocument{\usebeamertemplate{endpage}}
 

@@ -1,0 +1,21 @@
+\begin{frame}{The Latent Variable and its Elbow}
+    \small
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{align*}
+                \only<1->{p(\vx)      & = \int p(\vx, \vz) d\vz}                                                                           \\
+                \only<2->{\log p(\vx) & = \log \int p(\vx, \vz) d\vz}                                                                      \\
+                \only<4->{            & = \log \int \frac{p(\vx, \vz) q_{\theta}(\vz | \vx)}{q_{\theta}(\vz | \vx)} d\vz}                  \\
+                \only<6->{            & = \log \mathbb{E}_{q_{\phi}(\vz|\vx)} \left[ \frac{p(\vx,\vz)}{q_{\phi}(\vz|\vx)} \right]}         \\
+                \only<7->{            & \geq \mathbb{E}_{q_{\phi}(\vz | \vx)} \left[ \log \frac{p(\vx, \vz)}{q_{\phi}(\vz | \vx)} \right]}
+            \end{align*}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item<3-> Approximate $p(\vz | \vx)$ with a variational distribution $q_{\phi}(\vz | \vx)$
+                \item<5-> $\mathbb{E}_{p(\vx)}[f(\vx)] = \int f(\vx)p(\vx)d\vx$
+                \item<7-> \textbf{E}vidence \textbf{L}ower \textbf{Bo}und (ELBO)
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}

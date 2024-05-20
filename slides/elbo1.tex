@@ -1,0 +1,21 @@
+\begin{frame}{The Latent Variable and its Elbow}
+    \small
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item We can think of the data we observe as being modelled by a joint distribution $p(\vx, \vz)$
+                \item The \textbf{latent variable} $\vz$ is a random variable that represents the hidden structure of the data
+            \end{itemize}
+        \end{column} \pause
+        \begin{column}{0.5\linewidth}
+            \begin{align*}
+                \only<2->{p(\vx)      & = \int p(\vx, \vz) d\vz \\}
+                \only<3->{p(\vx, \vz) & = p(\vz | \vx) p(\vx)                             \\}
+                \only<4->{p(\vx)      & = \frac{p(\vx, \vz)}{p(\vz | \vx)}                \\}
+            \end{align*}
+            \begin{itemize}[label={}]
+                \item \only<5->{Intractable!}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
