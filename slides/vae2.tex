@@ -1,14 +1,16 @@
 \begin{frame}{Variational Autoencoders (VAEs)}
     \small
+    \setlength{\jot}{7pt}
     \begin{align*}
         \mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log{\frac{p(\vx,\vz)}{q_{\phi}(\vz|\vx)}}\right] & = \mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log{\frac{p_{\theta}(\vx|\vz)p(\vz)}{q_{\phi}(\vz|\vx)}}\right]                                                                                                                                    \\
         \uncover<2->{                                                                         & =\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log p_{\theta}(\vx|\vz)\right]+\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log\frac{p(\vz)}{q_{\phi}(\vz|\vx)}\right] \\}
         \uncover<3->{                                                                         & =\underbrace{\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log p_{\theta}(\vx|\vz)\right]}_{\textrm{reconstruction term}}+\underbrace{D_{\mathrm{KL}}(q_{\phi}(\vz|\vx)\parallel p(\vz))}_{\textrm{prior matching term}} \\}
     \end{align*}
+    \vspace{-20pt}
     \uncover<3->{
         \normalfont
         \begin{exampleblock}{KL Divergence}
-            $D_{\mathrm{KL}}(P\mid\mid Q)=\int p(\vx)\,\log\bigl(\frac{p(\vx)}{q(\vx)}\bigr)\,\mathrm{d}\vx=\mathbb{E}_{P}\left[\log\frac{P(\vx)}{Q(\vx)}\right]$
+            $\displaystyle D_{\mathrm{KL}}(P\mid\mid Q)=\int p(\vx)\,\log\biggl(\frac{p(\vx)}{q(\vx)}\biggr)\,\mathrm{d}\vx=\mathbb{E}_{P}\left[\log\frac{P(\vx)}{Q(\vx)}\right]$
         \end{exampleblock}
     }
 \end{frame}

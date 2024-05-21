@@ -1,0 +1,22 @@
+\begin{frame}{Hierarchical Variational Autoencoders (HVAEs)}
+
+    \small
+
+    \begin{textblock}{8}(0.7, 4.0)
+        \begin{itemize}
+            \visible<1->{\item In Markovian HVAEs each latent $\vz_{t}$ only conditions on the previous latent $\vz_{t-1}$}
+        \end{itemize}
+    \end{textblock}
+
+    \begin{textblock}{14}(0.7, 7.0)
+        \begin{itemize}
+            \visible<2->{\item $\displaystyle p(\vx,\vz_{1:T})=p(\vz_{T})p_{\theta}(\vx|\vz_{1})  \prod^{T}_{t=2}{p_{\theta}(\vz_{t-1}|\vz_{t})}$}
+                  \visible<2->{\item $\displaystyle q_{\phi}(\vz_{1:T}|\vx)=q_{\phi}(\vz_{1}|\vx)\prod_{t=2}^{T}q_{\phi}(\vz_{t}|\vz_{t-1})$}
+                  \visible<3->{\item $\displaystyle \log p(\vx) \geq \mathbb{E}_{q_{\phi}(\vz_{1:T}|\vx)}\left[\log{\frac{p(\vz_{T})p_{\theta}(\vx|\vz_{1})\prod_{t=2}^{T}p_{\theta}(\vz_{t-1}|\vz_{t})}{q_{\phi}(\vz_{1}|\vx)\prod_{t=2}^{T}q_{\phi}(\vz_{t}|\vz_{t-1})}}\right]$}
+        \end{itemize}
+    \end{textblock}
+
+    \begin{textblock}{6}(9.0, 3.5)
+        \includegraphics[width=1.0 \textwidth]{images/hvae_graph.png}
+    \end{textblock}
+\end{frame}

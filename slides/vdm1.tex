@@ -1,0 +1,13 @@
+\begin{frame}{Variational Diffusion Models (VDMs)}
+    \begin{figure}
+        \begin{itemize}
+            \item a VDM is a Markovian HVAE with three restrictions:
+                  \begin{itemize}
+                      \setlength{\itemsep}{8pt}
+                      \visible<2->{\item $\vx, \vz \in \mathbb{R}^{D}$}
+                            \visible<3->{\item $q(\vx_{t}|\vx_{t-1})={\mathcal{N}}(\vx_{t};{\sqrt{\alpha_{t}}}\vx_{t-1},(1-\alpha_{t}){\mathbf{I}})$}
+                            \visible<4->{\item $p(\vx_{T})=N(\vx_{T};0,\mathbf{I})$}
+                  \end{itemize}
+        \end{itemize}
+    \end{figure}
+\end{frame}
