@@ -10,14 +10,13 @@
 \usepackage{multimedia}
 \usepackage{acro}
 \usepackage{enumitem}
-% \usepackage{wrapfig}
 \usepackage[absolute, overlay]{textpos}
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\usepackage{mdframed}
 
 \usetheme{auriga}
 \usecolortheme{auriga}
-
-
-% \setbeamertemplate{blocks}[rounded][shadow]
 
 \title{Understanding Diffusion Models: A Unified Perspective}
 
@@ -42,6 +41,22 @@
 
 \input{acronyms}
 
+\newenvironment{exampleblockbordered}[1]{
+  \begin{mdframed}[
+    linewidth=2pt,
+    linecolor=blue!20,
+    roundcorner=5pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    skipabove=10pt,
+    skipbelow=10pt
+  ]
+  \begin{exampleblock}{#1}
+}{
+  \end{exampleblock}
+  \end{mdframed}
+}
+
 \begin{document}
 
 {
@@ -64,6 +79,9 @@
 \input{slides/hvae2.tex}
 \input{slides/vdm1.tex}
 \input{slides/vdm2.tex}
+\input{slides/vdm3.tex}
+\input{slides/vdm4.tex}
+\input{slides/vdm5.tex}
 
 \AtEndDocument{\usebeamertemplate{endpage}}
 

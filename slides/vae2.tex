@@ -1,3 +1,5 @@
+
+
 \begin{frame}{Variational Autoencoders (VAEs)}
     \small
     \setlength{\jot}{7pt}
@@ -6,11 +8,22 @@
         \uncover<2->{                                                                         & =\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log p_{\theta}(\vx|\vz)\right]+\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log\frac{p(\vz)}{q_{\phi}(\vz|\vx)}\right] \\}
         \uncover<3->{                                                                         & =\underbrace{\mathbb{E}_{q_{\phi}(\vz|\vx)}\left[\log p_{\theta}(\vx|\vz)\right]}_{\textrm{reconstruction term}}+\underbrace{D_{\mathrm{KL}}(q_{\phi}(\vz|\vx)\parallel p(\vz))}_{\textrm{prior matching term}} \\}
     \end{align*}
-    \vspace{-20pt}
+    \vspace{-3em}
     \uncover<3->{
         \normalfont
-        \begin{exampleblock}{KL Divergence}
-            $\displaystyle D_{\mathrm{KL}}(P\mid\mid Q)=\int p(\vx)\,\log\biggl(\frac{p(\vx)}{q(\vx)}\biggr)\,\mathrm{d}\vx=\mathbb{E}_{P}\left[\log\frac{P(\vx)}{Q(\vx)}\right]$
-        \end{exampleblock}
+        \begin{mdframed}[
+                linewidth=2pt,
+                linecolor=blue!20,
+                roundcorner=5pt,
+                innertopmargin=5pt,
+                innerbottommargin=5pt,
+                rightmargin=85pt,
+                skipabove=5pt,
+                skipbelow=5pt
+            ]
+            \begin{exampleblock}{KL Divergence}
+                $\displaystyle D_{\mathrm{KL}}(P\mid\mid Q)=\int p(\vx)\,\log\biggl(\frac{p(\vx)}{q(\vx)}\biggr)\,\mathrm{d}\vx=\mathbb{E}_{P}\left[\log\frac{P(\vx)}{Q(\vx)}\right]$
+            \end{exampleblock}
+        \end{mdframed}
     }
 \end{frame}

@@ -6,15 +6,20 @@
             \begin{align*}
                 \visible<1->{p(\vx)      & = \int p(\vx, \vz) d\vz}                                                                           \\
                 \visible<2->{\log p(\vx) & = \log \int p(\vx, \vz) d\vz}                                                                      \\
-                \visible<4->{            & = \log \int \frac{p(\vx, \vz) q_{\theta}(\vz | \vx)}{q_{\theta}(\vz | \vx)} d\vz}                  \\
-                \visible<6->{            & = \log \mathbb{E}_{q_{\phi}(\vz|\vx)} \left[ \frac{p(\vx,\vz)}{q_{\phi}(\vz|\vx)} \right]}         \\
-                \visible<7->{            & \geq \mathbb{E}_{q_{\phi}(\vz | \vx)} \left[ \log \frac{p(\vx, \vz)}{q_{\phi}(\vz | \vx)} \right]}
+                \visible<3->{            & = \log \int \frac{p(\vx, \vz) q_{\theta}(\vz | \vx)}{q_{\theta}(\vz | \vx)} d\vz}                  \\
+                \visible<5->{            & = \log \mathbb{E}_{q_{\phi}(\vz|\vx)} \left[ \frac{p(\vx,\vz)}{q_{\phi}(\vz|\vx)} \right]}         \\
+                \visible<6->{            & \geq \mathbb{E}_{q_{\phi}(\vz | \vx)} \left[ \log \frac{p(\vx, \vz)}{q_{\phi}(\vz | \vx)} \right]}
             \end{align*}
         \end{column}
         \begin{column}{0.5\linewidth}
+            \visible<4->{
+                \vspace{-5em}
+                \begin{exampleblockbordered}{Expectation}
+                    $\displaystyle \mathbb{E}_{p(\vx)}[f(\vx)] = \int f(\vx)p(\vx)d\vx$
+                \end{exampleblockbordered}}
             \begin{itemize}
+                \vspace{0em}
                 \visible<3->{\item Approximate $p(\vz | \vx)$ with a variational distribution $q_{\phi}(\vz | \vx)$}
-                      \visible<5->{\item $\displaystyle \mathbb{E}_{p(\vx)}[f(\vx)] = \int f(\vx)p(\vx)d\vx$}
                       \visible<7->{\item \textbf{E}vidence \textbf{L}ower \textbf{Bo}und (ELBO)}
             \end{itemize}
         \end{column}
