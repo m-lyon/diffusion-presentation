@@ -15,6 +15,12 @@
 \usepackage{tcolorbox}
 \usepackage{mdframed}
 
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+
 \usetheme{auriga}
 \usecolortheme{auriga}
 
@@ -80,9 +86,16 @@
 \input{slides/vdm1.tex}
 \input{slides/vdm2.tex}
 \input{slides/vdm3.tex}
-\input{slides/vdm4.tex}
-\input{slides/vdm5.tex}
+\input{slides/vdm_elbo1.tex}
+\input{slides/vdm_elbo2.tex}
+\input{slides/vdm_elbo3.tex}
+\input{slides/vdm_elbo4.tex}
+\input{slides/gt_denoiser.tex}
+\input{slides/approx_denoiser.tex}
 
-\AtEndDocument{\usebeamertemplate{endpage}}
+\usebeamertemplate{endpage}
+
+\input{slides/rewriting_encoder1.tex}
+\input{slides/rewriting_encoder2.tex}
 
 \end{document}

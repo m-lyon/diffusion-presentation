@@ -1,0 +1,13 @@
+\begin{frame}{Ground truth denoiser}
+    \vspace{-1em}
+    \small
+    \setlength{\jot}{10pt}
+    \begin{align*}
+        \visible<1->{q(\vx_{t-1}|\vx_{t},\vx_{0})}         & \visible<2->{= \frac{q(\vx_{t}|\vx_{t-1},\vx_{0})q(\vx_{t-1}|\vx_{0})}{q(\vx_{t}|\vx_{0})}}                                                                                                                                                                               \\
+                                                           & \only<3-4>{= \frac{\mathcal{N}(\vx_{t};\sqrt{\alpha_{t}}\vx_{t-1},(1-\alpha_{t})\mathbf{I})\mathcal{N}(\vx_{t-1};\sqrt{\bar{\alpha}_{t-1}}\vx_{0},(1-\bar{\alpha}_{t-1})\mathbf{I})}{\mathcal{N}(\vx_{t};\sqrt{\bar{\alpha}_{t}}\vx_{0},(1-\bar{\alpha}_{t})\mathbf{I})}} \\
+                                                           & \visible<4-5>{= \mathcal{N} (\vx_{t-1};\frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})\vx_{t}+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_{t})\vx_{0}}{1-\bar{\alpha}_{t}},\frac{(1-\alpha_{t})(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_{t}}\mathbf{I})}                               \\
+                                                           & \visible<5->{= \mathcal{N}(\vx_{t-1};\boldsymbol{\mu}_{q}(\vx_{t},\vx_{0}),\boldsymbol{\Sigma}_{q}(t))}                                                                                                                                                                   \\
+        \visible<6->{\boldsymbol{\mu}_{q}(\vx_{t},\vx_{0}) & = \frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})\vx_{t}+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_{t})\vx_{0}}{1-\bar{\alpha}_{t}}}                                                                                                                                               \\
+        \visible<6->{\boldsymbol{\Sigma}_{q}(t)            & = \sigma^{2}_{q}(t)\mathbf{I}, \quad \sigma^{2}_{q}(t) = \frac{(1-\alpha_{t})(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_{t}}}
+    \end{align*}
+\end{frame}

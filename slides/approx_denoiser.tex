@@ -1,0 +1,25 @@
+\begin{frame}{Parameterised denoiser}
+    % \begin{columns}
+    %     \begin{column}{0.5\textwidth}
+    \vspace{0em}
+    \small
+    \begin{itemize}
+        \setlength\itemsep{1em}
+        \visible<1->{\item We want to learn $\ \displaystyle p_{\boldsymbol{\theta}}(\vx_{t-1}|\vx_{t}) \approx \mathcal{N}(\vx_{t-1};\boldsymbol{\mu}_{q}(\vx_{t},\vx_{0}),\boldsymbol{\Sigma}_{q}(t))$}
+              \visible<2->{\item $\displaystyle \boldsymbol{\Sigma}_{q}(t) = \sigma^{2}_{q}(t)\mathbf{I}\ $ is known}
+              \visible<3->{\item We parameterise $\displaystyle \boldsymbol{\mu}_{\boldsymbol{\theta}}(\vx_{t}, t)$ as $\displaystyle p_{\boldsymbol{\theta}}(\vx_{t-1}|\vx_{t})$ does not condition on $\displaystyle \vx_{0}$}
+              \visible<4->{\item
+              $ \displaystyle
+                  \!
+                  \begin{aligned}[t]
+                        & \ \underset{\boldsymbol{\theta}}{\argmin}\ D_{\mathrm{KL}}(q(\vx_{t-1}|\vx_{t},\vx_{0})\parallel  p_{\boldsymbol{\theta}}(\vx_{t-1}|\vx_{t}))              \\
+                      = & \ \underset{\boldsymbol{\theta}}{\argmin}\ {\frac{1}{2\sigma_{q}^{2}(t)}}\Big[\|\boldsymbol{\mu}_{\boldsymbol{\theta}}-\boldsymbol{\mu}_{q}\|_{2}^{2}\Big]
+                  \end{aligned}
+              $}
+
+    \end{itemize}
+    %     \end{column}
+    % \end{columns}
+
+
+\end{frame}

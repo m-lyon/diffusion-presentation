@@ -1,0 +1,9 @@
+\begin{frame}{Lower variance estimator of the VDM ELBO}
+    \vspace{0em}
+    \setlength{\jot}{10pt}
+    \begin{align*}
+        \visible<1-1>{\log p(\vx) \ge & \ldots -\sum_{t=1}^{T-1}\underbrace{\mathbb{E}_{q(\vx_{t-1},\vx_{t+1}|\vx_{0})}\left[D_{\mathrm{KL}}(q(\vx_{t}|\vx_{t-1}) \parallel p_{\theta}(\vx_{t}|\vx_{t+1}))\right]}_{\textrm{consistency term}}}                         \\
+        \visible<2->{\log p(\vx) \ge  & \underbrace{\mathbb{E}_{q(\vx_{1}|\vx_{0})}\left[\log p_{\theta}(\vx_{0}|\vx_{1})\right]}_{\textrm{reconstruction term}} - \underbrace{D_{\mathrm{KL}}(q(\vx_{T}|\vx_{0}) \parallel p(\vx_{T}))}_{\textrm{prior matching term}} \\
+                                      & -\sum_{t=2}^{T}\underbrace{\mathbb{E}_{q(\vx_{t}|\vx_{0})}\left[D_{\mathrm{KL}}(q(\vx_{t-1}|\vx_{t},\vx_{0}) \parallel p_{\theta}(\vx_{t-1}|\vx_{t}))\right]}_{\textrm{denoising matching term}}}                               \\
+    \end{align*}
+\end{frame}
