@@ -1,0 +1,11 @@
+\begin{frame}{Parameterised denoiser}
+    \vspace{0em}
+    \small
+    \begin{itemize}
+        \setlength\itemsep{1em}
+        \visible<1->{\item $\displaystyle \boldsymbol{\mu}_{q}(\vx_{t},\vx_{0}) = \frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})\vx_{t}+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_{t})\vx_{0}}{1-\bar{\alpha}_{t}}$}
+              \visible<2->{\item $\displaystyle \boldsymbol{\mu}_{\boldsymbol{\theta}}(\vx_{t},t) = \frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})\vx_{t}+\sqrt{\bar{\alpha}_{t-1}}(1-\alpha_{t})\hat{\vx}_{\boldsymbol{\theta}}(\vx_{t},t)}{1-\bar{\alpha}_{t}}$}
+              \visible<2->{\item $\displaystyle \underset{\boldsymbol{\theta}}{\argmin}\ \frac{1}{2\sigma_{q}^{2}(t)}\,\frac{\bar{\alpha}_{t-1}(1-\alpha_{t})^{2}}{(1-\bar{\alpha}_{t})^{2}}\,\Bigl[\|\hat{\vx}_{\boldsymbol{\theta}}(\vx_{t},t)-\vx_{0}\|_{2}^{2}\Bigr]$}
+              \visible<3->{\item $\displaystyle \underset{\boldsymbol{\theta}}{\argmin}\ \mathbb{E}_{t\sim U\{2,T\}}\left[\mathbb{E}_{q(\vx_{t}|\vx_{0})}\left[\frac{1}{2\sigma_{q}^{2}(t)}\,\frac{\bar{\alpha}_{t-1}(1-\alpha_{t})^{2}}{(1-\bar{\alpha}_{t})^{2}}\,\Bigl[\|\hat{\vx}_{\boldsymbol{\theta}}(\vx_{t},t)-\vx_{0}\|_{2}^{2}\Bigr]\right]\right]$}
+    \end{itemize}
+\end{frame}

@@ -17,9 +17,6 @@
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
-\newcommand\Item[1][]{%
-  \ifx\relax#1\relax  \item \else \item[#1] \fi
-  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
 
 \usetheme{auriga}
 \usecolortheme{auriga}
@@ -66,7 +63,7 @@
 \begin{document}
 
 {
-\setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+% \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
 \begin{frame}
     \titlepage
 \end{frame}
@@ -91,7 +88,8 @@
 \input{slides/vdm_elbo3.tex}
 \input{slides/vdm_elbo4.tex}
 \input{slides/gt_denoiser.tex}
-\input{slides/approx_denoiser.tex}
+\input{slides/parameterised_denoiser1.tex}
+\input{slides/parameterised_denoiser2.tex}
 
 \usebeamertemplate{endpage}
 
