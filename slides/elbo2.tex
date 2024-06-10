@@ -6,7 +6,7 @@
             \begin{align*}
                 \visible<1->{p(\vx)      & = \int p(\vx, \vz) d\vz}                                                                           \\
                 \visible<2->{\log p(\vx) & = \log \int p(\vx, \vz) d\vz}                                                                      \\
-                \visible<3->{            & = \log \int \frac{p(\vx, \vz) q_{\theta}(\vz | \vx)}{q_{\theta}(\vz | \vx)} d\vz}                  \\
+                \visible<3->{            & = \log \int \frac{p(\vx, \vz) q_{\phi}(\vz | \vx)}{q_{\phi}(\vz | \vx)} d\vz}                      \\
                 \visible<5->{            & = \log \mathbb{E}_{q_{\phi}(\vz|\vx)} \left[ \frac{p(\vx,\vz)}{q_{\phi}(\vz|\vx)} \right]}         \\
                 \visible<6->{            & \geq \mathbb{E}_{q_{\phi}(\vz | \vx)} \left[ \log \frac{p(\vx, \vz)}{q_{\phi}(\vz | \vx)} \right]}
             \end{align*}
